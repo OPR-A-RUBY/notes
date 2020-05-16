@@ -25,12 +25,13 @@
       <!-- Здесь сделаем блок вывода Sign_IN и Sign_OUT в зависимости от того, залогинился пользователь или не залогинился. 
       Дополнительно будем прописывать ЛОГИН, под которым проведена регистрация данного пользователя -->  
         <% if user_signed_in? %>
-          <b>Привет, <%= current_user.user_name %>!</b>
-          <%= link_to 'Уйти', destroy_user_session_path, method: :delete %><br />
-          <%= link_to 'Редактировать АККАУНТ', edit_user_registration_path %>
+          User: <b><%= current_user.email %></b><br />
+          <%= link_to 'Sign_OUT',  destroy_user_session_path, method: :delete %> |
+          <%= link_to 'Edition', edit_user_registration_path %>
         <% else %>
-          <%= link_to 'Зайти', new_user_session_path %><br /> 
-          <%= link_to 'Зарегистрироваться',     new_user_registration_path %>
+          <b>User: Guest </b><br />
+          <%= link_to 'Registration', new_user_registration_path %> |
+          <%= link_to 'Sign_IN',      new_user_session_path %> 
         <% end %>
       </div>
     </nav>
