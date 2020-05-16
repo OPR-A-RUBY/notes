@@ -4,7 +4,7 @@
 <hr />
 <a href="/users/sign_up">Новый пользователь</a> <br />
 <a href="/users/sign_in">Войти (IN)</a> |
-<a href="/users/sign_out">Выйти (OUT)</a> <br />
+<%= link_to 'Выйти (OUT)', destroy_user_session_path, method: :delete %><br />
 <a href="/users/edit">Редактировать АККАУНТ</a> <br />
 <hr />
 <a href="/labels/new">Новая метка</a> <br />
