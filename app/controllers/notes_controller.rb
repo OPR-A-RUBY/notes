@@ -4,7 +4,11 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    @notes = Note.where(user_id: current_user.id) 
+    if user_signed_in?
+      @notes = Note.where(user_id: current_user.id)
+    else
+      @notes = Note.where(user_id: 0)   
+    end  
   end
 
   # GET /notes/1

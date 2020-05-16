@@ -4,7 +4,11 @@ class LabelsController < ApplicationController
   # GET /labels
   # GET /labels.json
   def index
-    @labels = Label.where(user_id: current_user.id)
+    if user_signed_in?
+      @labels = Label.where(user_id: current_user.id)
+    else
+      @labels = Label.where(user_id: 0)   
+    end  
   end
 
   # GET /labels/1
