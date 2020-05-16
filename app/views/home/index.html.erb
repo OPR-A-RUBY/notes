@@ -2,16 +2,18 @@
 <p>Find me in app/views/home/index.html.erb</p>
 
 <hr />
-<a href="/users/sign_up">Новый пользователь</a> <br />
-<a href="/users/sign_in">Войти (IN)</a> |
-<%= link_to 'Выйти (OUT)', destroy_user_session_path, method: :delete %><br />
-<a href="/users/edit">Редактировать АККАУНТ</a> <br />
 <hr />
-<a href="/labels/new">Новая метка</a> <br />
-<a href="/labels">Все метки</a> <br />
+<%= link_to 'Новый пользователь',     new_user_registration_path %><br />
+<%= link_to 'Войти (IN)',                  new_user_session_path %> |
+<%= link_to 'Выйти (OUT)',             destroy_user_session_path, method: :delete %><br />
+<%= link_to 'Редактировать АККАУНТ', edit_user_registration_path %><br />
 <hr />
 <hr />
-<a href="/notes/new">Новая ЗАМЕТКА</a> <br />
-<a href="/notes">Все ЗАМЕТКИ</a> <br />
+<%= link_to 'Новая метка',  new_label_path %><br />
+<%= link_to 'Все метки',       labels_path %><br />
+<hr />
+<hr />
+<%= link_to 'Новая ЗАМЕТКА', new_note_path %><br />
+<%= link_to 'Все ЗАМЕТКИ',      notes_path %><br />
 <hr />
 <hr />
