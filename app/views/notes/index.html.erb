@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Title</th>
       <th>User</th>
       <th>Label</th>
@@ -21,6 +22,7 @@
   <tbody>
     <% @notes.each do |note| %>
       <tr>
+        <td><%= note.id %></td>
         <td><%= note.title %></td>
         <td><%= note.user_id %></td>
         <td><%= note.label_id %></td>
