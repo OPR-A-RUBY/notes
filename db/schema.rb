@@ -10,12 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_16_115826) do
+ActiveRecord::Schema.define(version: 2020_05_16_140750) do
 
   create_table "labels", force: :cascade do |t|
     t.string "name"
     t.integer "user_id"
     t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.string "title"
+    t.integer "user_id"
+    t.integer "label_id"
+    t.boolean "public"
+    t.integer "level"
+    t.integer "stars"
+    t.text "description"
+    t.text "body"
+    t.text "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
