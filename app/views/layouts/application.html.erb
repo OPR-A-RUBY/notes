@@ -13,6 +13,15 @@
   </head>
 
   <body>
+    
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <div class="text-left col-md-9 col-sm-8">
+        <%= link_to 'Домой',    root_path %> |
+        <%= link_to 'Записки', notes_path %> |
+        <%= link_to 'Метки',  labels_path %> |
+      </div>         
+     
+      <div class="text-right col-md-3 col-sm-4"> 
       <!-- Здесь сделаем блок вывода Sign_IN и Sign_OUT в зависимости от того, залогинился пользователь или не залогинился. 
       Дополнительно будем прописывать ЛОГИН, под которым проведена регистрация данного пользователя -->  
         <% if user_signed_in? %>
@@ -23,7 +32,9 @@
           <%= link_to 'Зайти', new_user_session_path %><br /> 
           <%= link_to 'Зарегистрироваться',     new_user_registration_path %>
         <% end %>
-     
+      </div>
+    </nav>
+
     <%= yield %>
 
     <p class="notice"><%= notice %></p>
