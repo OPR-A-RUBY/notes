@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :labels
   devise_for :users
   root to: 'home#index'  # Стартовая страница обрабатывается контроллером home 
   get 'home/index'
