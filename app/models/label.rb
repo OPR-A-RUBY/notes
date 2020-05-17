@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Tables nane: labels
+#
+#   id          :integer
+#   name        :string
+#   user_id     :integer
+#   description :text
+#   created_at  :datetime   precision: 6, null: false
+#   updated_at  :datetime   precision: 6, null: false
+# 
+
 class Label < ApplicationRecord
     
   validates :name, presence: true  # Валидация на непустое поле
