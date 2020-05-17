@@ -5,10 +5,11 @@ class NotesController < ApplicationController
   # GET /notes.json
   def index
     if user_signed_in?
-      @notes = Note.where(user_id: current_user.id)
-      @notes = @notes + Note.where(public: true)
+      @notes_closed =  Note.where(user_id: current_user.id, public: false)
+      @notes_open   =  Note.where(user_id: current_user.id, public:  true)
+      @notes_public =  Note.where(public: true).where.not(user_id: current_user.id)
     else
-      @notes = Note.where(public: true)   
+      @notes_public  =  Note.where(public: true)   
     end  
   end
 
