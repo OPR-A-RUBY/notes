@@ -2,9 +2,9 @@
 
 <h1>Notes</h1>
 
-<% if user_signed_in? %>
+<% if user_signed_in? %> <!-- ЕСЛИ КЛИЕНТ: то выводим две следующие таблицы: -->
   <table>
-    <thead>
+    <thead>             <!-- ПЕРВАЯ ТАБЛИЦА: - этого клиента (скрытые) -->
       <tr>
           <th>Category</th>
           <th>Id</th>
@@ -22,7 +22,7 @@
     </thead>
 
     <tbody>
-      <% @notes_closed.each do |note| %>
+      <% @notes_closed.each do |note| %> <!-- СКРЫТЫЕ -->
           <tr>
             <td><%= 'Private' %></td>
             <td><%= note.id %></td>
@@ -36,8 +36,8 @@
             <td><%= note.body %></td>
             <td><%= note.url %></td>
             <td><%= link_to 'Show', note %></td>
-            <% if user_signed_in? %>
-              <% if current_user.id == note.user_id %>
+            <% if user_signed_in? %>             <!-- выводить DELETE & EDIT только если КЛИЕНТ, а дальше -->
+              <% if current_user.id == note.user_id %> <!-- выводить DELETE & EDIT если КЛИЕНТ есть АВТОР -->
                 <td><%= link_to 'Edit', edit_note_path(note) %></td>
                 <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% end %> <!-- /if current... -->
@@ -50,7 +50,7 @@
   <br>
 
   <table>
-    <thead>
+    <thead>             <!-- ВТОРАЯ ТАБЛИЦА: - этого клиента (открытые) -->
       <tr>
           <th>Category</th>
           <th>Id</th>
@@ -68,7 +68,7 @@
     </thead>
 
     <tbody>
-      <% @notes_open.each do |note| %>
+      <% @notes_open.each do |note| %> <!-- ОТКРЫТЫЕ -->
           <tr>
             <td><%= 'Public' %></td>
             <td><%= note.id %></td>
@@ -82,8 +82,8 @@
             <td><%= note.body %></td>
             <td><%= note.url %></td>
             <td><%= link_to 'Show', note %></td>
-            <% if user_signed_in? %>
-              <% if current_user.id == note.user_id %>
+            <% if user_signed_in? %>             <!-- выводить DELETE & EDIT только если КЛИЕНТ, а дальше -->
+              <% if current_user.id == note.user_id %> <!-- выводить DELETE & EDIT если КЛИЕНТ есть АВТОР -->
                 <td><%= link_to 'Edit', edit_note_path(note) %></td>
                 <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% end %> <!-- /if current... -->
@@ -94,12 +94,12 @@
   </table>
 <% end %> <!-- /if user... -->
 
-<br>
+<br>                            <!-- ДАЛЬШЕ всегда выводим таблицу и для КЛИЕНТА, и для ГОСТЯ --> 
 
 <table>
-  <thead>
+  <thead>                       <!-- ТРЕТЬЯ ТАБЛИЦА: - чужие публичные записки -->
     <tr>
-        <th>Category</th>
+        <th>Category</th>       <!-- для ГОСТЯ все публичные записки есть "чужие" -->
         <th>Id</th>
         <th>Title</th>
         <th>User</th>
@@ -129,8 +129,8 @@
           <td><%= note.body %></td>
           <td><%= note.url %></td>
           <td><%= link_to 'Show', note %></td>
-          <% if user_signed_in? %>
-            <% if current_user.id == note.user_id %>
+          <% if user_signed_in? %>             <!-- выводить DELETE & EDIT только если КЛИЕНТ, а дальше -->
+            <% if current_user.id == note.user_id %> <!-- выводить DELETE & EDIT если КЛИЕНТ есть АВТОР -->
               <td><%= link_to 'Edit', edit_note_path(note) %></td>
               <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             <% end %> <!-- /if current... -->
