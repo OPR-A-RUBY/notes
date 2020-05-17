@@ -33,8 +33,10 @@
         <td><%= note.body %></td>
         <td><%= note.url %></td>
         <td><%= link_to 'Show', note %></td>
-        <td><%= link_to 'Edit', edit_note_path(note) %></td>
-        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Edit', edit_note_path(note) %></td>
+          <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
