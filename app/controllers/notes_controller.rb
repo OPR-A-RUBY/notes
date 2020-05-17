@@ -6,6 +6,7 @@ class NotesController < ApplicationController
   def index
     if user_signed_in?
       @notes = Note.where(user_id: current_user.id)
+      @notes = @notes + Note.where(public: true)
     else
       @notes = Note.where(public: true)   
     end  
