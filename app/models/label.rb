@@ -1,4 +1,7 @@
 class Label < ApplicationRecord
+    
+  validates :name, presence: true  # Валидация на непустое поле
+     
   # Связь с таблицей молдели User: (Label принадлежит одному :User) 
   belongs_to :user
 
