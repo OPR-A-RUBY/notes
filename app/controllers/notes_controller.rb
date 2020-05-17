@@ -7,7 +7,7 @@ class NotesController < ApplicationController
     if user_signed_in?
       @notes = Note.where(user_id: current_user.id)
     else
-      @notes = Note.where(user_id: 0)   
+      @notes = Note.where(public: true)   
     end  
   end
 
