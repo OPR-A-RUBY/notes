@@ -18,14 +18,14 @@
     
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
       <div class="text-left col-md-9 col-sm-8">
-        <%= link_to ' Home ',     root_path %> |
+        <a class="navbar-brand" href="/">My scrapbook</a>
         <%= link_to ' Notes ',   notes_path %> |
         <%= link_to ' Labels ', labels_path %> |
       </div>         
      
       <div class="text-right col-md-3 col-sm-4"> 
       <!-- Здесь сделаем блок вывода Sign_IN и Sign_OUT в зависимости от того, залогинился пользователь или не залогинился. 
-      Дополнительно будем прописывать ЛОГИН, под которым проведена регистрация данного пользователя -->  
+      Дополнительно будем прописывать E-mail, под которым проведена регистрация данного пользователя -->  
         <% if user_signed_in? %>
           User: <b><%= current_user.email %></b><br />
           <%= link_to 'Sign_OUT',  destroy_user_session_path, method: :delete %> |
