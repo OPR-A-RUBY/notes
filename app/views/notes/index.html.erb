@@ -8,12 +8,9 @@
   <table class="table">
     <thead class="thead-light">             <!-- ПЕРВАЯ ТАБЛИЦА: - этого клиента (скрытые) -->
       <tr>
-          <th>Category</th>
           <th>Id</th>
           <th>Title</th>
-          <th>User</th>
           <th>Label</th>
-          <th>Public</th>
           <th>Level</th>
           <th>Stars</th>
           <th>Description</th>
@@ -26,12 +23,9 @@
     <tbody>
       <% @notes_closed.each do |note| %> <!-- СКРЫТЫЕ -->
           <tr>
-            <td><%= 'Private' %></td>
             <td><%= note.id %></td>
             <td><%= note.title %></td>
-            <td><%= note.user_id %></td>
             <td><%= note.label_id %></td>
-            <td><%= note.public %></td>
             <td><%= note.level %></td>
             <td><%= note.stars %></td>
             <td><%= note.description %></td>
@@ -55,12 +49,9 @@
   <table class="table">
     <thead class="thead-light">             <!-- ВТОРАЯ ТАБЛИЦА: - этого клиента (открытые) -->
       <tr>
-          <th>Category</th>
           <th>Id</th>
           <th>Title</th>
-          <th>User</th>
           <th>Label</th>
-          <th>Public</th>
           <th>Level</th>
           <th>Stars</th>
           <th>Description</th>
@@ -73,12 +64,9 @@
     <tbody>
       <% @notes_open.each do |note| %> <!-- ОТКРЫТЫЕ -->
           <tr>
-            <td><%= 'Public' %></td>
             <td><%= note.id %></td>
             <td><%= note.title %></td>
-            <td><%= note.user_id %></td>
             <td><%= note.label_id %></td>
-            <td><%= note.public %></td>
             <td><%= note.level %></td>
             <td><%= note.stars %></td>
             <td><%= note.description %></td>
@@ -101,14 +89,11 @@
 
 <h3>Others</h3>
 <table class="table">
-  <thead class="thead-light">                       <!-- ТРЕТЬЯ ТАБЛИЦА: - чужие публичные записки -->
-    <tr>
-        <th>Category</th>       <!-- для ГОСТЯ все публичные записки есть "чужие" -->
+  <thead class="thead-light">                 <!-- ТРЕТЬЯ ТАБЛИЦА: - чужие публичные записки -->
+    <tr>                                      <!-- для ГОСТЯ все публичные записки есть "чужие" -->   
         <th>Id</th>
         <th>Title</th>
-        <th>User</th>
         <th>Label</th>
-        <th>Public</th>
         <th>Level</th>
         <th>Stars</th>
         <th>Description</th>
@@ -121,12 +106,9 @@
   <tbody>
     <% @notes_public.each do |note| %>
         <tr>
-          <td><%= 'Others' %></td>
           <td><%= note.id %></td>
           <td><%= note.title %></td>
-          <td><%= note.user_id %></td>
           <td><%= note.label_id %></td>
-          <td><%= note.public %></td>
           <td><%= note.level %></td>
           <td><%= note.stars %></td>
           <td><%= note.description %></td>
