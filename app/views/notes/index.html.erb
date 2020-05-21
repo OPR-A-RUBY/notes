@@ -3,6 +3,8 @@
 <h1>Notes</h1>
 
 <% if user_signed_in? %> <!-- ЕСЛИ КЛИЕНТ: то выводим две следующие таблицы: -->
+  
+  <h3>Me Private</h3>
   <table class="table">
     <thead class="thead-light">             <!-- ПЕРВАЯ ТАБЛИЦА: - этого клиента (скрытые) -->
       <tr>
@@ -49,6 +51,7 @@
 
   <br>
 
+  <h3>Me Public</h3>
   <table class="table">
     <thead class="thead-light">             <!-- ВТОРАЯ ТАБЛИЦА: - этого клиента (открытые) -->
       <tr>
@@ -96,6 +99,7 @@
 
 <br>                            <!-- ДАЛЬШЕ всегда выводим таблицу и для КЛИЕНТА, и для ГОСТЯ --> 
 
+<h3>Others</h3>
 <table class="table">
   <thead class="thead-light">                       <!-- ТРЕТЬЯ ТАБЛИЦА: - чужие публичные записки -->
     <tr>
