@@ -15,7 +15,7 @@
 
   <body>
     <header id="header" class="border border-info">
-      <nav class="navbar navbar-light border border-info" style="background-color: #e3f2fd;">
+      <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
         <div class="text-left col-md-9 col-sm-8">
           <a class="navbar-brand" href="/">My scrapbook</a>
           - <%= link_to ' Notes ',           notes_path %> 
@@ -41,11 +41,11 @@
 
     <section class="">
       <div class="row">
-        <div class="main_centre col-lg-2 col-md-3 col-sm-4 col-xs-12 border border-info"> 
+        <div class="main_centre col-lg-2 col-md-3 col-sm-4 col-xs-12"> 
           Menu-test
         </div>
       
-        <div class="col-lg-10 col-md-9 col-sm-8 col-xs-12 border border-info">
+        <div class="col-lg-10 col-md-9 col-sm-8 col-xs-12">
           <div class="item-page home mobile_scroll"> 
 
           <%= yield %>
@@ -55,7 +55,7 @@
       </div>  
     </section>
           
-    <footer id="footer" class="border border-info" >
+    <footer id="footer" class="border border-info" style="background-color: #e3f2fd;">
       <div class="footer_con container">
         <div class="footer_rigth text-center">
           <br /> 
