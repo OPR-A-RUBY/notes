@@ -22,7 +22,7 @@
           <td><%= note.id %></td>
           <td><%= note.title %></td>
           <td><%= note.description %></td>
-          <td><%= link_to 'Link_to', note.url %></td>
+          <td><%= link_to 'Link', note.url %></td>
           <td><%= link_to 'Show', note %></td>
           <% if user_signed_in? %>             <!-- выводить DELETE & EDIT только если КЛИЕНТ, а дальше -->
             <% if current_user.id == note.user_id %> <!-- выводить DELETE & EDIT если КЛИЕНТ есть АВТОР -->
@@ -54,7 +54,7 @@
           <td><%= note.id %></td>
           <td><%= note.title %></td>
           <td><%= note.description %></td>
-          <td><%= link_to 'Link_to', note.url %></td>
+          <td><%= link_to 'Link', note.url %></td>
           <td><%= link_to 'Show', note %></td>
           <% if user_signed_in? %>             <!-- выводить DELETE & EDIT только если КЛИЕНТ, а дальше -->
             <% if current_user.id == note.user_id %> <!-- выводить DELETE & EDIT если КЛИЕНТ есть АВТОР -->
@@ -88,7 +88,7 @@
         <td><%= note.id %></td>
         <td><%= note.title %></td>
         <td><%= note.description %></td>
-        <td><%= link_to 'Link_to', note.url %></td>
+        <td><%= link_to 'Link', note.url %></td>
         <td><%= link_to 'Show', note %></td>
         <% if user_signed_in? %>             <!-- выводить DELETE & EDIT только если КЛИЕНТ, а дальше -->
           <% if current_user.id == note.user_id %> <!-- выводить DELETE & EDIT если КЛИЕНТ есть АВТОР -->
