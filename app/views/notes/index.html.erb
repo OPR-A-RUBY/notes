@@ -8,86 +8,85 @@
   <table class="table">
     <thead class="thead-light">             <!-- ПЕРВАЯ ТАБЛИЦА: - этого клиента (скрытые) -->
       <tr>
-          <th>Id</th>
-          <th>Title</th>
-          <th>Label</th>
-          <th>Level</th>
-          <th>Stars</th>
-          <th>Description</th>
-          <th>Body</th>
-          <th>Url</th>
-          <th colspan="3"></th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Label</th>
+        <th>Level</th>
+        <th>Stars</th>
+        <th>Description</th>
+        <th>Body</th>
+        <th>Url</th>
+        <th colspan="3"></th>
       </tr>
     </thead>
 
     <tbody>
       <% @notes_closed.each do |note| %> <!-- СКРЫТЫЕ -->
-          <tr>
-            <td><%= note.id %></td>
-            <td><%= note.title %></td>
-            <td><%= note.label.name %></td>  <!-- "note.label_id" to "note.label.name" -->
-            <td><%= note.level %></td>
-            <td><%= note.stars %></td>
-            <td><%= note.description %></td>
-            <td><%= note.body %></td>
-            <td><%= note.url %></td>
-            <td><%= link_to 'Show', note %></td>
-            <% if user_signed_in? %>             <!-- выводить DELETE & EDIT только если КЛИЕНТ, а дальше -->
-              <% if current_user.id == note.user_id %> <!-- выводить DELETE & EDIT если КЛИЕНТ есть АВТОР -->
-                <td><%= link_to 'Edit', edit_note_path(note) %></td>
-                <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              <% end %> <!-- /if current... -->
-            <% end %> <!-- /if user... -->  
+        <tr>
+          <td><%= note.id %></td>
+          <td><%= note.title %></td>
+          <td><%= note.label.name %></td>  <!-- "note.label_id" to "note.label.name" -->
+          <td><%= note.level %></td>
+          <td><%= note.stars %></td>
+          <td><%= note.description %></td>
+          <td><%= note.body %></td>
+          <td><%= note.url %></td>
+          <td><%= link_to 'Show', note %></td>
+          <% if user_signed_in? %>             <!-- выводить DELETE & EDIT только если КЛИЕНТ, а дальше -->
+            <% if current_user.id == note.user_id %> <!-- выводить DELETE & EDIT если КЛИЕНТ есть АВТОР -->
+              <td><%= link_to 'Edit', edit_note_path(note) %></td>
+              <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %> <!-- /if current... -->
+          <% end %> <!-- /if user... -->  
         </tr>
       <% end %>
     </tbody>
-  </table>
-
-  <br>
+  </table><br>
 
   <h3>Me Public</h3>
+
   <table class="table">
     <thead class="thead-light">             <!-- ВТОРАЯ ТАБЛИЦА: - этого клиента (открытые) -->
       <tr>
-          <th>Id</th>
-          <th>Title</th>
-          <th>Label</th>
-          <th>Level</th>
-          <th>Stars</th>
-          <th>Description</th>
-          <th>Body</th>
-          <th>Url</th>
-          <th colspan="3"></th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Label</th>
+        <th>Level</th>
+        <th>Stars</th>
+        <th>Description</th>
+        <th>Body</th>
+        <th>Url</th>
+        <th colspan="3"></th>
       </tr>
     </thead>
 
     <tbody>
       <% @notes_open.each do |note| %> <!-- ОТКРЫТЫЕ -->
-          <tr>
-            <td><%= note.id %></td>
-            <td><%= note.title %></td>
-            <td><%= note.label.name %></td>  <!-- "note.label_id" to "note.label.name" -->
-            <td><%= note.level %></td>
-            <td><%= note.stars %></td>
-            <td><%= note.description %></td>
-            <td><%= note.body %></td>
-            <td><%= note.url %></td>
-            <td><%= link_to 'Show', note %></td>
-            <% if user_signed_in? %>             <!-- выводить DELETE & EDIT только если КЛИЕНТ, а дальше -->
-              <% if current_user.id == note.user_id %> <!-- выводить DELETE & EDIT если КЛИЕНТ есть АВТОР -->
-                <td><%= link_to 'Edit', edit_note_path(note) %></td>
-                <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              <% end %> <!-- /if current... -->
-            <% end %> <!-- /if user... -->  
+        <tr>
+          <td><%= note.id %></td>
+          <td><%= note.title %></td>
+          <td><%= note.label.name %></td>  <!-- "note.label_id" to "note.label.name" -->
+          <td><%= note.level %></td>
+          <td><%= note.stars %></td>
+          <td><%= note.description %></td>
+          <td><%= note.body %></td>
+          <td><%= note.url %></td>
+          <td><%= link_to 'Show', note %></td>
+          <% if user_signed_in? %>             <!-- выводить DELETE & EDIT только если КЛИЕНТ, а дальше -->
+            <% if current_user.id == note.user_id %> <!-- выводить DELETE & EDIT если КЛИЕНТ есть АВТОР -->
+              <td><%= link_to 'Edit', edit_note_path(note) %></td>
+              <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %> <!-- /if current... -->
+          <% end %> <!-- /if user... -->  
         </tr>
       <% end %>
     </tbody>
   </table>
-<% end %> <!-- /if user... -->
+<% end %> <br> <!-- /if user... -->
 
-<br>                            <!-- ДАЛЬШЕ всегда выводим таблицу и для КЛИЕНТА, и для ГОСТЯ --> 
-
+                            <!-- ДАЛЬШЕ всегда выводим таблицу и для КЛИЕНТА, и для ГОСТЯ --> 
 <h3>Others</h3>
+
 <table class="table">
   <thead class="thead-light">                 <!-- ТРЕТЬЯ ТАБЛИЦА: - чужие публичные записки -->
     <tr>                                      <!-- для ГОСТЯ все публичные записки есть "чужие" -->   
@@ -105,29 +104,25 @@
 
   <tbody>
     <% @notes_public.each do |note| %>
-        <tr>
-          <td><%= note.id %></td>
-          <td><%= note.title %></td>
-          <td><%= note.label.name %></td>  <!-- "note.label_id" to "note.label.name" -->
-          <td><%= note.level %></td>
-          <td><%= note.stars %></td>
-          <td><%= note.description %></td>
-          <td><%= note.body %></td>
-          <td><%= note.url %></td>
-          <td><%= link_to 'Show', note %></td>
-          <% if user_signed_in? %>             <!-- выводить DELETE & EDIT только если КЛИЕНТ, а дальше -->
-            <% if current_user.id == note.user_id %> <!-- выводить DELETE & EDIT если КЛИЕНТ есть АВТОР -->
-              <td><%= link_to 'Edit', edit_note_path(note) %></td>
-              <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            <% end %> <!-- /if current... -->
-          <% end %> <!-- /if user... -->  
+      <tr>
+        <td><%= note.id %></td>
+        <td><%= note.title %></td>
+        <td><%= note.label.name %></td>  <!-- "note.label_id" to "note.label.name" -->
+        <td><%= note.level %></td>
+        <td><%= note.stars %></td>
+        <td><%= note.description %></td>
+        <td><%= note.body %></td>
+        <td><%= note.url %></td>
+        <td><%= link_to 'Show', note %></td>
+        <% if user_signed_in? %>             <!-- выводить DELETE & EDIT только если КЛИЕНТ, а дальше -->
+          <% if current_user.id == note.user_id %> <!-- выводить DELETE & EDIT если КЛИЕНТ есть АВТОР -->
+            <td><%= link_to 'Edit', edit_note_path(note) %></td>
+            <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %> <!-- /if current... -->
+        <% end %> <!-- /if user... -->  
       </tr>
     <% end %>
   </tbody>
-</table>
+</table><br>
 
-<br>
-
-<% if user_signed_in? %>
-  <%= link_to 'New Note', new_note_path %>
-<% end %>
+<%= link_to 'New Note', new_note_path if user_signed_in? %>
