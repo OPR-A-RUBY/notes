@@ -14,29 +14,30 @@
   </head>
 
   <body>
-    
-    <nav class="navbar navbar-light border border-info" style="background-color: #e3f2fd;">
-      <div class="text-left col-md-9 col-sm-8">
-        <a class="navbar-brand" href="/">My scrapbook</a>
-        - <%= link_to ' Notes ',           notes_path %> 
-        - <%= link_to ' Labels ',         labels_path if user_signed_in? %> 
-        - <%= link_to ' Autor_site ', autor_site_path if user_signed_in? %>
-      </div>         
-     
-      <div class="text-right col-md-3 col-sm-4"> 
-      <!-- Здесь сделаем блок вывода Sign_IN и Sign_OUT в зависимости от того, залогинился пользователь или не залогинился. 
-      Дополнительно будем прописывать E-mail, под которым проведена регистрация данного пользователя -->  
-        <% if user_signed_in? %>
-          User: <b><%= current_user.email %></b><br />
-          <%= link_to 'Sign_OUT',  destroy_user_session_path, method: :delete %> |
-          <%= link_to 'Edition', edit_user_registration_path %>
-        <% else %>
-          <b>User: Guest </b><br />
-          <%= link_to 'Registration', new_user_registration_path %> |
-          <%= link_to 'Sign_IN',      new_user_session_path %> 
-        <% end %>
-      </div>
-    </nav>
+    <header id="header" class="container">
+      <nav class="navbar navbar-light border border-info" style="background-color: #e3f2fd;">
+        <div class="text-left col-md-9 col-sm-8">
+          <a class="navbar-brand" href="/">My scrapbook</a>
+          - <%= link_to ' Notes ',           notes_path %> 
+          - <%= link_to ' Labels ',         labels_path if user_signed_in? %> 
+          - <%= link_to ' Autor_site ', autor_site_path if user_signed_in? %>
+        </div>         
+       
+        <div class="text-right col-md-3 col-sm-4"> 
+        <!-- Здесь сделаем блок вывода Sign_IN и Sign_OUT в зависимости от того, залогинился пользователь или не залогинился. 
+        Дополнительно будем прописывать E-mail, под которым проведена регистрация данного пользователя -->  
+          <% if user_signed_in? %>
+            User: <b><%= current_user.email %></b><br />
+            <%= link_to 'Sign_OUT',  destroy_user_session_path, method: :delete %> |
+            <%= link_to 'Edition', edit_user_registration_path %>
+          <% else %>
+            <b>User: Guest </b><br />
+            <%= link_to 'Registration', new_user_registration_path %> |
+            <%= link_to 'Sign_IN',      new_user_session_path %> 
+          <% end %>
+        </div>
+      </nav>
+    </header>
 
     <%= yield %>
 
