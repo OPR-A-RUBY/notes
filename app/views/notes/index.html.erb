@@ -4,7 +4,7 @@
 
 <% if user_signed_in? %> <!-- ЕСЛИ КЛИЕНТ: то выводим две следующие таблицы: -->
   
-  <h3>Me Private</h3>
+  <h4 class="text-right">Me Private</h4>
   <table class="table">
     <thead class="thead-light">             <!-- ПЕРВАЯ ТАБЛИЦА: - этого клиента (скрытые) -->
       <tr>
@@ -35,7 +35,7 @@
     </tbody>
   </table><br>
 
-  <h3>Me Public</h3>
+  <h4 class="text-right">Me Public</h4>
 
   <table class="table">
     <thead class="thead-light">             <!-- ВТОРАЯ ТАБЛИЦА: - этого клиента (открытые) -->
@@ -69,7 +69,7 @@
 <% end %> <br> <!-- /if user... -->
 
                             <!-- ДАЛЬШЕ всегда выводим таблицу и для КЛИЕНТА, и для ГОСТЯ --> 
-<h3>Others</h3>
+<h4 class="text-right">Others</h4>
 
 <table class="table">
   <thead class="thead-light">                 <!-- ТРЕТЬЯ ТАБЛИЦА: - чужие публичные записки -->
