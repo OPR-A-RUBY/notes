@@ -4,7 +4,8 @@
 
 <% if user_signed_in? %> <!-- ЕСЛИ КЛИЕНТ: то выводим две следующие таблицы: -->
   
-  <h4 class="text-right">My Private notes</h4>
+  <h4 class="text-left">My Private notes</h4>
+
   <table class="table">
     <thead class="thead-light">             <!-- ПЕРВАЯ ТАБЛИЦА: - этого клиента (скрытые) -->
       <tr>
@@ -21,7 +22,7 @@
           <td><b><%= note.title %></b></td>
           <td>
             <%= note.description %><br />
-              <p class='text-left'>
+              <p class='text-right'>
                 <%= link_to 'Show', note, class: 'btn btn-outline-success btn-sm' %>
                 <%= link_to 'Link to', note.url, class: 'btn btn-outline-primary btn-sm' %>
                 <% if user_signed_in? %>             <!-- выводить DELETE & EDIT только если КЛИЕНТ, а дальше -->
@@ -38,7 +39,7 @@
     </tbody>
   </table><br>
 
-  <h4 class="text-right">My Public notes</h4>
+  <h4 class="text-left">My Public notes</h4>
 
   <table class="table">
     <thead class="thead-light">             <!-- ВТОРАЯ ТАБЛИЦА: - этого клиента (открытые) -->
@@ -56,7 +57,7 @@
           <td><b><%= note.title %></b></td>
           <td>
             <%= note.description %><br />
-              <p class='text-left'>
+              <p class='text-right'>
                 <%= link_to 'Show', note, class: 'btn btn-outline-success btn-sm' %>
                 <%= link_to 'Link to', note.url, class: 'btn btn-outline-primary btn-sm' %>
                 <% if user_signed_in? %>             <!-- выводить DELETE & EDIT только если КЛИЕНТ, а дальше -->
@@ -75,7 +76,7 @@
 <% end %> <br> <!-- /if user... -->
 
                             <!-- ДАЛЬШЕ всегда выводим таблицу и для КЛИЕНТА, и для ГОСТЯ --> 
-<h4 class="text-right">Other notes</h4>
+<h4 class="text-left">Other notes</h4>
 
 <table class="table">
   <thead class="thead-light">                 <!-- ТРЕТЬЯ ТАБЛИЦА: - чужие публичные записки -->
@@ -93,7 +94,7 @@
           <td><b><%= note.title %></b></td>
           <td>
             <%= note.description %><br />
-              <p class='text-left'>
+              <p class='text-right'>
                 <%= link_to 'Show', note, class: 'btn btn-outline-success btn-sm' %>
                 <%= link_to 'Link to', note.url, class: 'btn btn-outline-primary btn-sm' %>
                 <% if user_signed_in? %>             <!-- выводить DELETE & EDIT только если КЛИЕНТ, а дальше -->
