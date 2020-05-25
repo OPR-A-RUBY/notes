@@ -32,6 +32,10 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
 
+    # Сделаем автоматическое заполнение поля user_id Для этого добавим здесь строчку:
+    @note.user_id = current_user.id  # Подтягивает значение от текущего пользователя 
+    # И закоменитуем блок, где вводится это значение в файле формы _form.html.erb
+
     respond_to do |format|
       if @note.save
         format.html { redirect_to @note, notice: 'Note was successfully created.' }
