@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <title>Scrapbook</title>
+    <title>Developer Scrapbook</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -18,7 +18,7 @@
     <header id="header" class="border border-info">
       <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
         <div class="text-left col-md-9 col-sm-8">
-          <a class="navbar-brand" href="/">My scrapbook</a>
+          <a class="navbar-brand" href="/">Developer scrapbook</a>
             <%= link_to ' Notes ',           notes_path, class: 'btn btn-primary'%> 
             <%= link_to ' Labels ',         labels_path, class: 'btn btn-primary' if user_signed_in? %> 
             <%= link_to ' Autor_site ', autor_site_path, class: 'btn btn-primary' if user_signed_in? %>
@@ -29,12 +29,12 @@
         Дополнительно будем прописывать E-mail, под которым проведена регистрация данного пользователя -->  
           <% if user_signed_in? %>
             User: <b><%= current_user.email %></b><br />
-            <%= link_to 'Sign_OUT',  destroy_user_session_path, method: :delete %> |
-            <%= link_to 'Edition', edit_user_registration_path %>
+            <%= link_to 'Sign_OUT',  destroy_user_session_path, method: :delete, class: 'btn btn-success btn-sm' %>
+            <%= link_to 'Edition', edit_user_registration_path, class: 'btn btn-outline-warning btn-sm' %>
           <% else %>
-            <b>User: Guest </b><br />
-            <%= link_to 'Registration', new_user_registration_path %> |
-            <%= link_to 'Sign_IN',      new_user_session_path %> 
+            User: <b> Guest </b><br />
+            <%= link_to 'Registration', new_user_registration_path, class: 'btn btn-outline-warning btn-sm' %> 
+            <%= link_to 'Sign_IN',      new_user_session_path, class: 'btn btn-success btn-sm' %> 
           <% end %>
         </div>
       </nav>
@@ -53,8 +53,8 @@
               <p><%= link_to 'New Note',   new_note_path, class: 'btn btn-outline-primary btn-block'%></p>
             </div>
           <% end %>  
-          <div>
-            
+          <div class='text-center'>
+            <h4>Labels</h4>
           </div>
         </div>
       
