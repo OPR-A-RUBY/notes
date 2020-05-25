@@ -30,6 +30,10 @@ class LabelsController < ApplicationController
   def create
     @label = Label.new(label_params)
 
+    # Сделаем автоматическое заполнение поля user_id Для этого добавим здесь строчку:
+    @label.user_id = current_user.id  # Подтягивает значение от текущего пользователя 
+    # И закоменитуем блок, где вводится это значение в файле формы _form.html.erb
+
     respond_to do |format|
       if @label.save
         format.html { redirect_to @label, notice: 'Label was successfully created.' }
