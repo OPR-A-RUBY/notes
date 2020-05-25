@@ -8,7 +8,6 @@
       <th>Id</th>
       <th>Name</th>
       <th>Description</th>
-      <th colspan="1"></th>
     </tr>
   </thead>
 
@@ -17,8 +16,7 @@
       <tr>
         <td><%= label.id %></td>
         <td><%= label.name %></td>
-        <td><%= label.description %></td>
-        <td>
+        <td><%= label.description %>
           <div class='text-right'>
             <%= link_to 'Show', label, class: 'btn btn-outline-success btn-sm' %>
             <%= link_to 'Edit', edit_label_path(label), class: 'btn btn-outline-warning btn-sm' %>
