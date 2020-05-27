@@ -57,3 +57,5 @@ gem 'devise'
 gem 'bootstrap', '~> 4.4.1'
 
 gem "activesupport", ">= 5.2.4.3"
+gem "actionpack", ">= 5.2.4.3"
+gem "activestorage", ">= 5.2.4.3"
