@@ -47,16 +47,17 @@
           <% if user_signed_in? %>
             <div class='text-center'>
               <p></p>
-              <h4>Menu</h4>
-              <p><%= link_to 'Create New Label', new_label_path, class: 'btn btn-outline-primary btn-block'%></p>
-              <p><%= link_to 'Create New Note',   new_note_path, class: 'btn btn-outline-primary btn-block'%></p>
+              <%= link_to 'New Label', new_label_path, class: 'btn btn-outline-primary btn-block btn-sm'%>
+              <%= link_to 'New Note',   new_note_path, class: 'btn btn-outline-primary btn-block btn-sm'%>
             </div>
-          <% end %>  
+          <% end %> 
+          <hr /> 
           <div class='text-center'>
             <h4>Labels</h4>
             <% $labels_cur.each do |label| %>
-              <%= link_to label.name, root_path, class: 'btn btn-outline-success btn-block'%>
+              <%= link_to label.name, root_path, class: 'btn btn-outline-success btn-block btn-sm'%>
             <% end %>
+            <p></p>
           </div>
         </div>
       
