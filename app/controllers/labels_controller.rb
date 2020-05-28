@@ -9,7 +9,6 @@ class LabelsController < ApplicationController
     else
       @labels = Label.where(user_id: 0)   
     end
-    $labels_cur = @labels
   end
 
   # GET /labels/1
