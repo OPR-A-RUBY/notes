@@ -21,7 +21,6 @@
           <a class="navbar-brand" href="/">Developer scrapbook</a>
           <%= link_to ' Notes ',           notes_path, class: 'btn btn-info', title: 'Show notes'%> 
           <%= link_to ' Labels ',         labels_path, class: 'btn btn-info' if user_signed_in? %>
-          <%= link_to ' Autor_site ', autor_site_path, class: 'btn btn-info' if user_signed_in? %>
         </div>         
        
         <div class="text-right col-md-3 col-sm-4"> 
@@ -55,6 +54,9 @@
           <% end %>  
           <div class='text-center'>
             <h4>Labels</h4>
+            <% $labels_cur.each do |label| %>
+              <%= link_to label.name, root_path, class: 'btn btn-outline-success btn-block'%>
+            <% end %>
           </div>
         </div>
       
@@ -82,9 +84,7 @@
           <script src="/bootstrap-4.4.1-dist/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
           <script src="/bootstrap-4.4.1-dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-          <%= link_to 'jquery-3.4.1',  'https://code.jquery.com/jquery-3.4.1.slim.min.js' %> | 
-          <%= link_to 'popper.min.js', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' %> | 
-          <%= link_to 'bootstrap.min.js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js' %> 
+          <%= link_to ' Show site author profile now ', autor_site_path if user_signed_in? %>
         </div>
       </div>
     </footer>

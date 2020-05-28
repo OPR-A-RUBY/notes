@@ -8,7 +8,8 @@ class LabelsController < ApplicationController
       @labels = Label.where(user_id: current_user.id)
     else
       @labels = Label.where(user_id: 0)   
-    end  
+    end
+    $labels_cur = @labels
   end
 
   # GET /labels/1
