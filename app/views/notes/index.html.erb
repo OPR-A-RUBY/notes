@@ -4,7 +4,7 @@
 
 <% if user_signed_in? %> <!-- ЕСЛИ КЛИЕНТ: то выводим две следующие таблицы: -->
   
-  <h4 class="text-left">My Private notes</h4>
+  <h4 class="text-left">It is My Private notes: </h4>
 
   <table class="table">
     <thead class="thead-light">             <!-- ПЕРВАЯ ТАБЛИЦА: - этого клиента (скрытые) -->
@@ -40,7 +40,7 @@
   </table>
 
 
-  <h4 class="text-left">My Public notes</h4>
+  <h4 class="text-left">It is My Public notes: </h4>
 
   <table class="table">
     <thead class="thead-light">             <!-- ВТОРАЯ ТАБЛИЦА: - этого клиента (открытые) -->
@@ -77,7 +77,7 @@
 <% end %> <!-- /if user... -->
 
                             <!-- ДАЛЬШЕ всегда выводим таблицу и для КЛИЕНТА, и для ГОСТЯ --> 
-<h4 class="text-left">Other notes</h4>
+<h4 class="text-left"> It is Public notes of all other users: </h4>
 
 <table class="table">
   <thead class="thead-light">                 <!-- ТРЕТЬЯ ТАБЛИЦА: - чужие публичные записки -->
