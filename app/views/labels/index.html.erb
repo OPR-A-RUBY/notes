@@ -3,7 +3,7 @@
 <div class="border border-info" >
   <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
     <div class="text-left col-md-9 col-sm-8">
-      <a class="navbar-brand" href="/">Labels</a>
+      <a class="navbar-brand" href="/labels">Labels</a>
       <%= link_to 'New Label', new_label_path, class: 'btn btn-outline-primary btn-sm' if user_signed_in? %>
     </div>         
     <div class="text-right col-md-3 col-sm-4"> 
@@ -11,6 +11,8 @@
     </div>
   </nav>
 </div>
+
+<h4 class="text-left">It is My Labels: </h4>
 
 <table class="table">
   <thead class="thead-light">
