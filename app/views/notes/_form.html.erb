@@ -16,15 +16,17 @@
     <%= form.text_field :title %>
   </div>
 
-<!-- Закоментировали данный блок, т.к. значение теперь будет подтягиваться автоматом в контроллере -->
-  <!-- <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div> -->
+<!-- Значение :user_id будет подтягиваться автоматом в контроллере -->
 
-  <div class="field">
-    <%= form.label :label_id %>
-    <%= form.number_field :label_id %>
+<!-- Значение :label_id будет предлогаться для выбора в блоке ниже: -->
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Label select</label>
+    <select type="number" name="note[label_id]" class="form-control" id="exampleFormControlSelect1" >
+      <% $labels_cur.each do |label| %>
+        <option value="<%= label.id %>" ><%= label.name %></option>
+      <% end %>
+    </select>
   </div>
 
   <div class="field">
