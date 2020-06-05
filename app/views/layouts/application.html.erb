@@ -19,8 +19,8 @@
       <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
         <div class="text-left col-md-9 col-sm-8">
           <a class="navbar-brand" href="/">Developer scrapbook</a>
-          <%= link_to ' Notes ',           notes_path, class: 'btn btn-info', title: 'Show notes'%> 
-          <%= link_to ' Labels ',         labels_path, class: 'btn btn-info' if user_signed_in? %>
+          <%= link_to 'Notes ',  notes_path, class: 'btn btn-info', title: 'Show notes'%>
+          <%= link_to 'Labels', labels_path, class: 'btn btn-info' if user_signed_in? %>  
         </div>         
        
         <div class="text-right col-md-3 col-sm-4"> 
@@ -46,8 +46,15 @@
 <!-- ================================================================================================== MENU-block -->
           <div class='text-center'>
             <h4>Labels</h4>
+            <!-- Перебираем все текщие метки и выводим их в левое меню по двум условиям:
+                  если это Чел, то выводим каждую метку этого Чела, иначе
+                  если это Гость, то выводим только не нулевые метки (у которых есть публичные записи) --> 
             <% $labels_cur.each do |label| %>
-              <%= link_to label.name + " (#{$labels_hh[label.id]})", root_path, class: 'btn btn-outline-success btn-block btn-sm' if $labels_hh[label.id] != 0 %>
+              <% if user_signed_in? %>
+                <%= link_to label.name + " (#{$labels_hh[label.id]})", root_path, class: 'btn btn-outline-success btn-block btn-sm'%>              
+              <% elsif $labels_hh[label.id] != 0 %>
+                <%= link_to label.name + " (#{$labels_hh[label.id]})", root_path, class: 'btn btn-outline-success btn-block btn-sm'%>
+              <% end %>  
             <% end %>
             <p></p>
           </div>
