@@ -45,5 +45,6 @@
   <%= @note.url %>
 </p>
 
-<%= link_to 'Edit', edit_note_path(@note) %> |
-<%= link_to 'Back', notes_path %>
+<%= link_to 'Edit', edit_note_path(@note), class: 'btn btn-outline-warning btn-sm'%>
+<%= link_to 'Destroy', notes_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' %>
+<p></p>
