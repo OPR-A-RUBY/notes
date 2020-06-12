@@ -14,7 +14,10 @@
 
 <% stars_display %>
 
-                                        <% 3.times do |i|                                               %>
+                                        <% s=2                                                          %>
+                                        <% s=0 if user_signed_in?                                       %>
+                                        
+                                        <% s.upto(2) do |i|                                             %>
                                         <%    i = 2 if !user_signed_in?                                 %>
                                         <%    if    i == 0                                              %>
                                         <%      hh_name = :open                                         %>
@@ -26,6 +29,7 @@
                                         <%      hh_name = :public                                       %>
                                         <%      title_table = 'It is Public notes of all other users:'  %>
                                         <%    end                                                       %>
+
 <h4 class="text-left"><%= title_table %></h4>
 <table class="table">
     <thead class="thead-light"> 
@@ -36,7 +40,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @notes_3[hh_name].each do |note| %> <!--  -->
+      <% @notes_3[hh_name].each do |note| %> <!-- # Перебираем все запист в выбранном (по hh_name) хеше -->
         <tr>
           <td><%= note.id %></td>
           <td><b><%= note.title %></b></td>
