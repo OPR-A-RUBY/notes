@@ -28,7 +28,7 @@
     </thead>
 
     <tbody>
-      <% @notes_closed.each do |note| %> <!-- СКРЫТЫЕ -->
+      <% @notes_3[:closed].each do |note| %> <!-- СКРЫТЫЕ -->
         <tr>
           <td><%= note.id %></td>
           <td><b><%= note.title %></b></td>
@@ -64,7 +64,7 @@
     </thead>
 
     <tbody>
-      <% @notes_open.each do |note| %> <!-- ОТКРЫТЫЕ -->
+      <% @notes_3[:open].each do |note| %> <!-- ОТКРЫТЫЕ -->
         <tr>
           <td><%= note.id %></td>
           <td><b><%= note.title %></b></td>
@@ -101,7 +101,7 @@
   </thead>
 
   <tbody>
-    <% @notes_public.each do |note| %>
+    <% @notes_3[:public].each do |note| %>
       <tr>
           <td><%= note.id %></td>
           <td><b><%= note.title %></b></td>

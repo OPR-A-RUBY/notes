@@ -4,13 +4,18 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
+    @notes_3 = {}
     if user_signed_in?  # ЕСЛИ КЛИЕНТ: то формируется три переменные:
       @notes_closed =  Note.where(user_id: current_user.id, public: false) # - этого клиента (скрытые)
       @notes_open   =  Note.where(user_id: current_user.id, public:  true) # - этого клиента (открытые)
       @notes_public =  Note.where(public: true).where.not(user_id: current_user.id) # - все открытые из БД (но не этого клиента)
     else                # ЕСЛИ ГОСТЬ: то формируется одна переменная:
       @notes_public  =  Note.where(public: true)   # - все открытые, всех клиентов.
-    end  
+    end 
+      @notes_3[:closed] = @notes_closed
+      @notes_3[:open]   = @notes_open
+      @notes_3[:public] = @notes_public
+      puts @notes_3
   end
 
   # GET /notes/1
