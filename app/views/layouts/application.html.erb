@@ -45,7 +45,9 @@
         <div class="main_centre col-lg-2 col-md-3 col-sm-4 col-xs-12"> 
 <!-- ================================================================================================== MENU-block -->
           <div class='text-center'>
+            <p class="alert"><%= alert %></p> 
             <h4>Labels</h4>
+            <p class="notice"><%= notice %></p>
             <!-- Перебираем все текщие метки и выводим их в левое меню по двум условиям:
                   если это Чел, то выводим каждую метку этого Чела, иначе
                   если это Гость, то выводим только не нулевые метки (у которых есть публичные записи) --> 
@@ -63,7 +65,6 @@
         <div class="col-lg-10 col-md-9 col-sm-8 col-xs-12">
           <div class="item-page home mobile_scroll"> 
 <!-- ================================================================================================= YIELD-block -->
-
           <%= yield %>
 
           </div>
@@ -87,9 +88,6 @@
           <%= link_to ' Show site author profile now ', autor_site_path if user_signed_in? %>
         </div>
       </div>
-    </footer>
-    
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>  
+    </footer> 
   </body>
 </html>
