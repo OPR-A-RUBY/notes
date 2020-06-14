@@ -42,7 +42,7 @@
 
 <p>
   <strong>Url:</strong>
-  <%= @note.url %>
+  <%= link_to @note.url.to_s, @note.url, title: 'Go to this linck ...' %>
 </p>
 
 <%= link_to 'Back to Notes',  notes_path, class: 'btn btn-info btn-sm', title: 'Show notes'%>
