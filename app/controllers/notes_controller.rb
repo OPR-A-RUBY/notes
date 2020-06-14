@@ -15,7 +15,7 @@ class NotesController < ApplicationController
       @notes_3[:closed] = @notes_closed
       @notes_3[:open]   = @notes_open
       @notes_3[:public] = @notes_public
-      puts @notes_3
+      # puts @notes_3 ### FOR GEBUG
   end
 
   # GET /notes/1

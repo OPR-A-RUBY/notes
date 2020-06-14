@@ -18,18 +18,19 @@
                                         <% s=0 if user_signed_in?                                       %>
 
                                         <% s.upto(2) do |i|                                             %>
+
                                         <%    if    i == 0                                              %>
-                                        <%      hh_name = :open                                         %>
+                                        <%      hh_name = :closed                                       %>
                                         <%      title_table = 'It is My Private notes:'                 %>
 
                                         <%    elsif i == 1                                              %>
-                                        <%      hh_name = :closed                                       %>
+                                        <%      hh_name = :open                                         %>
                                         <%      title_table = 'It is My Public notes:'                  %>
 
                                         <%    elsif i == 2                                              %>
                                         <%      hh_name = :public                                       %>
                                         <%      title_table = 'It is Public notes of all other users:'  %>
-                                        
+                                      
                                         <%    end                                                       %>
 
 <h4 class="text-left"><%= title_table %></h4>
