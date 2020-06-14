@@ -15,5 +15,5 @@
   <%= @label.description %>
 </p>
 
-<%= link_to 'Edit', edit_label_path(@label) %> |
-<%= link_to 'Back', labels_path %>
+<%= link_to 'Back', labels_path, class: 'btn btn-info btn-sm', title: 'Show labels' %>
+<%= link_to 'Edit', edit_label_path(@label), class: 'btn btn-outline-warning btn-sm'%>

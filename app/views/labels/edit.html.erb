@@ -2,5 +2,6 @@
 
 <%= render 'form', label: @label %>
 
-<%= link_to 'Show', @label %> |
-<%= link_to 'Back', labels_path %>
+<%= link_to 'Back', labels_path, class: 'btn btn-info btn-sm', title: 'Show labels' %>
+<%= link_to 'Show', @label, class: 'btn btn-outline-success btn-sm' %>
+<p></p>
