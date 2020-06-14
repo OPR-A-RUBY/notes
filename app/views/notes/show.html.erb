@@ -45,9 +45,9 @@
   <%= link_to @note.url.to_s, @note.url, title: 'Go to this linck ...' %>
 </p>
 
-<%= link_to 'Back to Notes',  notes_path, class: 'btn btn-info btn-sm', title: 'Show notes'%>
+<%= link_to 'Back to Notes',  notes_path, class: 'btn btn-info btn-sm', title: 'Show notes'%> 
 
-<% if user_signed_in? and current_user.id == @note.user_id then %>
+<% if user_signed_in? and current_user.id == @note.user_id then %> <!-- Два условия для отображения -->
   <%= link_to 'Edit', edit_note_path(@note), class: 'btn btn-outline-warning btn-sm'%>
   <%= link_to 'Destroy', notes_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' %>
 <% end %>
