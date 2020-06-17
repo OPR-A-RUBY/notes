@@ -18,5 +18,6 @@ class Label < ApplicationRecord
   belongs_to :user
 
   # Связь с таблицей молдели Notes: (Label имеет много :Notes) 
-  has_many :notes  
+  has_many :notes, dependent: :destroy
+  # label имеет много notes. При удалении label удаляются все связанные с ней notes.  
 end
