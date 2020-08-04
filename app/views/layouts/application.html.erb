@@ -53,9 +53,9 @@
                   если это Гость, то выводим только не нулевые метки (у которых есть публичные записи) --> 
             <% $labels_cur.each do |label| %>
               <% if user_signed_in? %>
-                <%= link_to label.name + " (#{$labels_hh[label.id]})", root_path, class: 'btn btn-outline-success btn-block btn-sm'%>              
+                <%= link_to label.name + " (#{$labels_hh[label.id]})", notes_path, class: 'btn btn-outline-success btn-block btn-sm'%>              
               <% elsif $labels_hh[label.id] != 0 %>
-                <%= link_to label.name + " (#{$labels_hh[label.id]})", root_path, class: 'btn btn-outline-success btn-block btn-sm'%>
+                <%= link_to label.name + " (#{$labels_hh[label.id]})", notes_path, class: 'btn btn-outline-success btn-block btn-sm'%>
               <% end %>  
             <% end %>
             <p></p>
