@@ -21,18 +21,21 @@
 
                                         <%    if    i == 0                                              %>
                                         <%      hh_name = :closed                                       %>
-                                        <%      title_table = 'It is My Private notes:'                 %>
+                                        <%      title_table = 'It is My private notes:'                 %>
 
                                         <%    elsif i == 1                                              %>
                                         <%      hh_name = :open                                         %>
-                                        <%      title_table = 'It is My Public notes:'                  %>
+                                        <%      title_table = 'It is My public notes:'                  %>
 
                                         <%    elsif i == 2                                              %>
                                         <%      hh_name = :public                                       %>
-                                        <%      title_table = 'It is Public notes of all other users:'  %>
+                                        <%      title_table = 'It is public notes of all other users:'  %>
                                       
                                         <%    end                                                       %>
-
+                                        <!-- теперь установив эти две переменные выводим таблицу       -->
+                                        <!--                            для каждого вида записей       -->
+                                        <!-- конец этого скрипта ищи ниже                              -->
+                                        
 <h4 class="text-left"><%= title_table %></h4>
 <table class="table">
     <thead class="thead-light"> 
