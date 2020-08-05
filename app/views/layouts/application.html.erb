@@ -52,10 +52,10 @@
                   если это Чел, то выводим каждую метку этого Чела, иначе
                   если это Гость, то выводим только не нулевые метки (у которых есть публичные записи) --> 
             <% $labels_cur.each do |label| %>
-              <% if user_signed_in? %>
-                <%= link_to label.name + " (#{$labels_hh[label.id]})", notes_path, class: 'btn btn-outline-success btn-block btn-sm'%>              
-              <% elsif $labels_hh[label.id] != 0 %>
-                <%= link_to label.name + " (#{$labels_hh[label.id]})", notes_path, class: 'btn btn-outline-success btn-block btn-sm'%>
+              <% if user_signed_in? %>                  <!-- Чувак свой! - It's USER -->
+                <%= link_to label.name + " (#{$labels_hh[label.id]})", notes_path(:cur_lab_id => label.id), class: 'btn btn-outline-success btn-block btn-sm'%>              
+              <% elsif $labels_hh[label.id] != 0 %>     <!-- Чувак в тени - It's GUEST -->
+                <%= link_to label.name + " (#{$labels_hh[label.id]})", notes_path(:cur_lab_id => label.id), class: 'btn btn-outline-success btn-block btn-sm'%>
               <% end %>  
             <% end %>
             <p></p>
