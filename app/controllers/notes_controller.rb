@@ -22,7 +22,7 @@ class NotesController < ApplicationController
       if user_signed_in?  # ЕСЛИ КЛИЕНТ: то формируется три переменные:
         @notes_3[:closed] =  Note.where(user_id: current_user.id, public: false, label_id: cur_lab) # - этого клиента (скрытые)
         @notes_3[:open]   =  Note.where(user_id: current_user.id, public:  true, label_id: cur_lab) # - этого клиента (открытые)
-        @notes_3[:public] =  Note.where(public: true).where.not(user_id: current_user.id, label_id: cur_lab) # - все открытые из БД (но не этого клиента)
+        @notes_3[:public] =  Note.where(public: true, label_id: cur_lab).where.not(user_id: current_user.id) # - все открытые из БД (но не этого клиента)
       else                # ЕСЛИ ГОСТЬ: то формируется одна переменная:
         @notes_3[:public] =  Note.where(public: true, label_id: cur_lab)   # - все открытые, всех клиентов.
       end
