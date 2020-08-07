@@ -6,7 +6,7 @@ class NotesController < ApplicationController
   def index
     @notes_3 = {}
 
-    if params[:cur_lab_id] == nil 
+    if params[:cur_lab_id] == nil # Если текущаяя метка НЕ существует, то выбираем все запмси всех меток
 
        if user_signed_in?  # ЕСЛИ КЛИЕНТ: то формируется три переменные:
         @notes_3[:closed] =  Note.where(user_id: current_user.id, public: false) # - этого клиента (скрытые)
@@ -16,7 +16,7 @@ class NotesController < ApplicationController
         @notes_3[:public] =  Note.where(public: true)   # - все открытые, всех клиентов.
       end
     
-    else
+    else                          # ... иначе выбираем записи только имеющие текущую метку
     
       cur_lab = params[:cur_lab_id]
       if user_signed_in?  # ЕСЛИ КЛИЕНТ: то формируется три переменные:
