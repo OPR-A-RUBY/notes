@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :tags
   resources :notes
   resources :labels
   devise_for :users
