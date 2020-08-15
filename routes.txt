@@ -1,4 +1,12 @@
                                Prefix Verb   URI Pattern                                                                              Controller#Action
+                                 tags GET    /tags(.:format)                                                                          tags#index
+                                      POST   /tags(.:format)                                                                          tags#create
+                              new_tag GET    /tags/new(.:format)                                                                      tags#new
+                             edit_tag GET    /tags/:id/edit(.:format)                                                                 tags#edit
+                                  tag GET    /tags/:id(.:format)                                                                      tags#show
+                                      PATCH  /tags/:id(.:format)                                                                      tags#update
+                                      PUT    /tags/:id(.:format)                                                                      tags#update
+                                      DELETE /tags/:id(.:format)                                                                      tags#destroy
                                 notes GET    /notes(.:format)                                                                         notes#index
                                       POST   /notes(.:format)                                                                         notes#create
                              new_note GET    /notes/new(.:format)                                                                     notes#new
