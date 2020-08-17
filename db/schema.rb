@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_14_195513) do
+ActiveRecord::Schema.define(version: 2020_08_17_191033) do
 
   create_table "labels", force: :cascade do |t|
     t.string "name"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 2020_08_14_195513) do
     t.text "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "notes_tags", id: false, force: :cascade do |t|
+    t.integer "note_id"
+    t.integer "tag_id"
+    t.index "\"note\"", name: "index_notes_tags_on_note"
+    t.index "\"tag\"", name: "index_notes_tags_on_tag"
+    t.index ["note_id"], name: "index_notes_tags_on_note_id"
+    t.index ["tag_id"], name: "index_notes_tags_on_tag_id"
   end
 
   create_table "tags", force: :cascade do |t|
