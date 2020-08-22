@@ -51,9 +51,12 @@
           <td><b><%= note.title %></b></td>
           <td>
             <%= note.description %><br />
-            Tags: <% note.tags.each do |tag| %>
-                  <i><%=  tag.title %></i>
-                  <% end %><br />
+            
+            <%= link_to 'Tags:', tags_path %> 
+            <% note.tags.each do |tag| %>
+               <i><%=  tag.title %></i>
+            <% end %><br />
+            
               <div class='text-right'>
                 <%= link_to 'Show', note, class: 'btn btn-outline-success btn-sm' %>
                 <%= link_to 'Link to', note.url, class: 'btn btn-outline-primary btn-sm' %>
