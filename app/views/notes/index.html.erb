@@ -58,15 +58,15 @@
             <% end %><br />
             
 <!-- III -->  <div class='text-right'>
-                <%= link_to 'Show', note, class: 'btn btn-outline-success btn-sm' %>
-                <%= link_to 'Link to', note.url, class: 'btn btn-outline-primary btn-sm' %>
+                <%= link_to 'Show',    note_path(note), class: 'btn btn-outline-success btn-sm' %>
+                <%= link_to 'Link to', note.url,  class: 'btn btn-outline-primary btn-sm' %>
 
                 <% if user_signed_in? %>             <!-- выводить DELETE & EDIT только если КЛИЕНТ, а дальше -->
 
                   <% if current_user.id == note.user_id %> <!-- выводить DELETE & EDIT если КЛИЕНТ есть АВТОР -->
 
-                    <%= link_to 'Edit', edit_note_path(note), class: 'btn btn-outline-warning btn-sm'%>
-                    <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' %>
+                    <%= link_to 'Edit',    edit_note_path(note), class: 'btn btn-outline-warning btn-sm'%>
+                    <%= link_to 'Destroy', note_path(note),      class: 'btn btn-outline-danger btn-sm',   method: :delete, data: { confirm: 'Are you sure?' } %>
                   
                   <% end %> <!-- /if current_user.id... -->
                 
