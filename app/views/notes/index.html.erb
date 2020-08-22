@@ -52,7 +52,7 @@
           <td>
             <%= note.description %><br />
             Tags: <% note.tags.each do |tag| %>
-                  <%=  tag.title %>
+                  <i><%=  tag.title %></i>
                   <% end %><br />
               <div class='text-right'>
                 <%= link_to 'Show', note, class: 'btn btn-outline-success btn-sm' %>
