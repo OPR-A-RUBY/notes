@@ -20,7 +20,8 @@
         <div class="text-left col-md-9 col-sm-8">
           <a class="navbar-brand" href="/">Developer scrapbook</a>
           <%= link_to 'Notes ',  notes_path, class: 'btn btn-info', title: 'Show notes'%>
-          <%= link_to 'Labels', labels_path, class: 'btn btn-info' if user_signed_in? %>  
+          <%= link_to 'Labels', labels_path, class: 'btn btn-info' if user_signed_in? %>
+          <%= link_to 'Tags ',    tags_path, class: 'btn btn-info', title: 'Show tagss'%>  
         </div>         
        
         <div class="text-right col-md-3 col-sm-4"> 
