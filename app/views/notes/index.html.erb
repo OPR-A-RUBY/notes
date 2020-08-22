@@ -51,6 +51,9 @@
           <td><b><%= note.title %></b></td>
           <td>
             <%= note.description %><br />
+            Tags: <% note.tags.each do |tag| %>
+                  <%=  tag.title %>
+                  <% end %><br />
               <div class='text-right'>
                 <%= link_to 'Show', note, class: 'btn btn-outline-success btn-sm' %>
                 <%= link_to 'Link to', note.url, class: 'btn btn-outline-primary btn-sm' %>
