@@ -38,8 +38,11 @@ Things you may want to cover:
 
 Отношения таблиц в БД:
 
-Label 1-* Note
-User  1-* Note
-Tag   *-* Note
+1. Label 1-* Note
+
+2. User  1-* Note
+
+3. Tag   *-* Note
+
 
 БД = SQLite
