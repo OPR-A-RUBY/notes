@@ -60,7 +60,7 @@
   </div>
 
   <div> <!-- Выводим здесь прикреплённые теги -->
-    <%= link_to 'Tags:', tags_path %> 
+    <%= link_to 'Tags:', tags_selection_path(note), method: :post %> 
     <% note.tags.each do |tag| %>
       <i><%=  tag.title %></i>
     <% end %>
