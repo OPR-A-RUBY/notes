@@ -56,7 +56,16 @@
 
   <div class="field">
     <%= form.label :url %>
-    <%= form.text_area :url, rows: 2, style: 'width:100%;' %>
+    <%= form.text_area :url, rows: 1, style: 'width:100%;' %>
+  </div>
+
+  <div> <!-- Выводим здесь прикреплённые теги -->
+    <%= link_to 'Tags:', tags_path %> 
+    <% note.tags.each do |tag| %>
+      <i><%=  tag.title %></i>
+    <% end %>
+    <br />
+    <br />
   </div>
 
   <div class="actions">
