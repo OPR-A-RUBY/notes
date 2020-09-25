@@ -7,6 +7,7 @@
                                       PATCH  /tags/:id(.:format)                                                                      tags#update
                                       PUT    /tags/:id(.:format)                                                                      tags#update
                                       DELETE /tags/:id(.:format)                                                                      tags#destroy
+                       tags_selection POST   /tags/selection(.:format)                                                                tags#selection
                                 notes GET    /notes(.:format)                                                                         notes#index
                                       POST   /notes(.:format)                                                                         notes#create
                              new_note GET    /notes/new(.:format)                                                                     notes#new

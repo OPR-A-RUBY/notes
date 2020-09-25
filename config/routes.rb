@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
   resources :tags
+  post 'tags/selection'
+
   resources :notes
   resources :labels
   devise_for :users
