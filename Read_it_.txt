@@ -1,0 +1,41 @@
+HEADS UP! i18n 1.1 changed fallbacks to exclude default locale.
+But that may break your application.
+
+If you are upgrading your Rails application from an older version of Rails:
+
+Please check your Rails app for 'config.i18n.fallbacks = true'.
+If you're using I18n (>= 1.1.0) and Rails (< 5.2.2), this should be
+'config.i18n.fallbacks = [I18n.default_locale]'.
+If not, fallbacks will be broken in your app by I18n 1.1.x.
+
+If you are starting a NEW Rails application, you can ignore this notice.
+
+For more info see:
+https://github.com/svenfuchs/i18n/releases/tag/v1.1.0
+
+====================================================================================
+
+ВНИМАНИЕ! i18n 1.1 изменил резервные версии, чтобы исключить язык по умолчанию.
+Но это может привести к сбою вашего приложения.
+
+Если вы обновляете свое приложение Rails с более старой версии Rails:
+
+Пожалуйста, проверьте ваше приложение Rails на наличие 'config.i18n.fallbacks = true'.
+Если вы используете I18n (>= 1.1.0) и Rails (< 5.2.2), это должно быть
+'config.i18n.fallbacks = [I18n.default_locale]'.
+Если нет, резервные копии будут отключены в вашем приложении с помощью I18n 1.1.x.
+
+Если вы запускаете новое приложение Rails, вы можете проигнорировать это уведомление.
+
+Для получения дополнительной информации смотрите:
+https://github.com/svenfuchs/i18n/releases/tag/v1.1.0
+
+
+HISTORY:
+ 1128  curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+ 1129  yarn --version
+ 1131  yarn install --check-files
+ 1133  bundle install
+ 1135  rails db:migrate
+ 1136  bundle exec rails s
+
